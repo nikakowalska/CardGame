@@ -47,7 +47,7 @@ public class MenuController {
 
     private boolean userSelectIncorrectOption(String result) {
 
-        return !() || result.equals("Y") || result.equals("N"));
+        return !( result.equals("Y") || result.equals("N"));
     }
 }
 
