@@ -4,12 +4,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import pl.dicedev.game.dto.TestDto;
 
 @RestController
 public class TestController {
+
     @RequestMapping(value = "s1",method = RequestMethod.GET)
-    public String getString1(){
-        return "s1";
+    public TestDto getString1(){
+        TestDto testDto = new TestDto();
+        testDto.setName("Ala");
+        testDto.setAge(18);
+        return testDto;
     }
     //TE DWIE METODY DZIALAJA TAK SAMO, wysylaja cos w swiat, sa odpo na żądanie
     @GetMapping("s2")
