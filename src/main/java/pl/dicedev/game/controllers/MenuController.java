@@ -3,10 +3,11 @@ package pl.dicedev.game.controllers;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import pl.dicedev.game.dto.MenuDto;
+import pl.dicedev.game.dto.MenuListDto;
 
 import java.util.List;
 
-@RequestMapping("menu")
+@RequestMapping("game")
 @RestController
 
 public class MenuController {
@@ -14,24 +15,29 @@ public class MenuController {
 
     private org.springframework.http.HttpHeaders HttpHeaders;
 
-    @GetMapping("options")
-    public String getStringPathParam(
-            @RequestParam("A") String A,
-            @RequestParam("Menu") List<String> Menu) {
-        return "URI options?A=" + A +
-                "&Menu=" + List.of(
+    @RequestMapping(value = "options", method = RequestMethod.GET)
+    public String getStringPathParam(List<MenuDto> menuOptions) {
+        MenuListDto menuListDto = new MenuListDto();
+        menuListDto.setMenuOptions(List.of(
                 (new MenuDto("A", "Choose your team-leader")),
                 (new MenuDto("B", "Throw a card ")),
-                (new MenuDto("C", "Show my hand")));
+                (new MenuDto("C", "Show my hand"))));
+        return MenuListDto;
     }
 
+    @PostMapping("options/{choice}/{A}")
+    public String getPostA(@PathVariable String choice, @PathVariable String A) {
+        return "choice" + choice + A;
+    }
 
-//        @GetMapping("requestparam/map")
-//        public String getStringPathParamMap (
-//                @RequestParam Map < String, String > paramMap
-//    ){
-//            return "URI requestparam/map?" + paramMap;
-//        }
+    @PostMapping("options/{choice}/{A}")
+    public String getPostB(@PathVariable String choice, @PathVariable String B) {
+        return "choice" + choice + B;
+    }
+    @PostMapping("options/{choice}/{C}")
+    public String getPostC(@PathVariable String choice, @PathVariable String C) {
+        return "choice" + choice + C;
+    }
 
     @GetMapping("requestheader")
     public String getStringH(
