@@ -8,17 +8,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MenuListDto {
-    private List<MenuDto> menuOptions;
 
-
-
-    public List<MenuDto> getMenuOptions(String letter) {
-        return menuOptions;
-    }
-
+       private List<MenuDto> menuOptions;
+    public List<MenuDto> getMenuOptions() {
+        return menuOptions;}
     public void setMenuOptions(List<MenuDto> menuOptions) {
         this.menuOptions = menuOptions;
     }
 
-
+    @Override
+    public String toString() {
+        return "MenuListDto{" +
+                "menuOptions=" + menuOptions +
+                '}';
+    }
 }
