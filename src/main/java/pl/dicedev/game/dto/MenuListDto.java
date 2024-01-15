@@ -12,7 +12,7 @@ public class MenuListDto {
 
 
 
-    public List<MenuDto> getMenuOptions() {
+    public List<MenuDto> getMenuOptions(String letter) {
         return menuOptions;
     }
 

@@ -34,7 +34,3 @@ public class TestController {
     //nazwa w nawiasach klamrowych musi odpowiadac nazwie zmiennej
 }
 //nazwa s4 moze byc dluga
-/rasy kotow/ brytyjski
-/ragdoll
-/rk/bryt
-rk/rag
