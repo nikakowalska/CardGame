@@ -1,24 +1,24 @@
 package pl.dicedev.game.dto;
 
 public class MenuDto {
-    private String entryLetter; //letter
+    private String letter;
     private String command;
 
-    public MenuDto(final String entryLetter, final String command) {
-        this.entryLetter = entryLetter;
+    public MenuDto(final String letter, final String command) {
+        this.letter = letter;
         this.command = command;
     }
 
-    public String getEntryLetter() {
-        return entryLetter;
+    public String getLetter() {
+        return letter;
     }
 
     public String getCommand() {
         return command;
     }
 
-    public void setEntryLetter(final String entryLetter) {
-        this.entryLetter = entryLetter;
+    public void setLetter(final String Letter) {
+        this.letter = letter;
     }
 
     public void setCommand(final String command) {
@@ -32,13 +32,13 @@ public class MenuDto {
 
         final MenuDto menuDto = (MenuDto) o;
 
-        if (!entryLetter.equals(menuDto.entryLetter)) return false;
+        if (!letter.equals(menuDto.letter)) return false;
         return command.equals(menuDto.command);
     }
 
     @Override
     public int hashCode() {
-        int result = entryLetter.hashCode();
+        int result = letter.hashCode();
         result = 31 * result + command.hashCode();
         return result;
     }
@@ -46,7 +46,7 @@ public class MenuDto {
     @Override
     public String toString() {
         return "MenuDto{" +
-                "entryLetter='" + entryLetter + '\'' +
+                "entryLetter='" + letter + '\'' +
                 ", command='" + command + '\'' +
                 '}';
     }
