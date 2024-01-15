@@ -22,7 +22,7 @@ public class MenuController {
                 (new MenuDto("A", "Choose your team-leader")),
                 (new MenuDto("B", "Throw a card ")),
                 (new MenuDto("C", "Show my hand"))));
-        return MenuListDto;
+        return String.valueOf(menuListDto);
     }
 
     @PostMapping("options/{choice}/{A}")
@@ -30,30 +30,22 @@ public class MenuController {
         return "choice" + choice + A;
     }
 
-    @PostMapping("options/{choice}/{A}")
-    public String getPostB(@PathVariable String choice, @PathVariable String B) {
-        return "choice" + choice + B;
-    }
-    @PostMapping("options/{choice}/{C}")
-    public String getPostC(@PathVariable String choice, @PathVariable String C) {
-        return "choice" + choice + C;
-    }
-
-    @GetMapping("requestheader")
-    public String getStringH(
-            @RequestHeader(org.springframework.http.HttpHeaders.ACCEPT_LANGUAGE) String language,
-            @RequestHeader("Little (but fun) Card Game") String myHeader
-    ) {
-        return "test URI language/" +
-                "\n" +
-                HttpHeaders.ACCEPT_LANGUAGE +
-                " " +
-                language +
-                "\n" +
-                "Little (but fun) Card Game" +
-                " " +
-                myHeader;
-    }
+//
+//    @GetMapping("requestheader")
+//    public String getStringH(
+//            @RequestHeader(org.springframework.http.HttpHeaders.ACCEPT_LANGUAGE) String language,
+//            @RequestHeader("Little (but fun) Card Game") String myHeader
+//    ) {
+//        return "test URI language/" +
+//                "\n" +
+//                HttpHeaders.ACCEPT_LANGUAGE +
+//                " " +
+//                language +
+//                "\n" +
+//                "Little (but fun) Card Game" +
+//                " " +
+//                myHeader;
+//    }
 }
 
 
