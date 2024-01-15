@@ -1,6 +1,5 @@
 package pl.dicedev.game.controllers;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 import pl.dicedev.game.dto.MenuDto;
 import pl.dicedev.game.dto.MenuListDto;
@@ -16,13 +15,13 @@ public class MenuController {
     private org.springframework.http.HttpHeaders HttpHeaders;
 
     @RequestMapping(value = "options", method = RequestMethod.GET)
-    public String getStringPathParam(List<MenuDto> menuOptions) {
+    public MenuListDto getStringPathParam() {
         MenuListDto menuListDto = new MenuListDto();
         menuListDto.setMenuOptions(List.of(
                 (new MenuDto("A", "Choose your team-leader")),
                 (new MenuDto("B", "Throw a card ")),
                 (new MenuDto("C", "Show my hand"))));
-        return String.valueOf(menuListDto);
+        return menuListDto;
     }
 
     @PostMapping("options/{choice}/{A}")
