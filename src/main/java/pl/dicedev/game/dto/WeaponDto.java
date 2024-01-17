@@ -2,7 +2,7 @@ package pl.dicedev.game.dto;
 
 public class WeaponDto {
 
-    SABER(7, ElementsDto.NONE), ORB(7, ElementsDto.NONE), BOW(7, ElementsDto.NONE), DAGGER(7, ElementsDto.NONE), LIRA(7, ElementsDto.NONE), SWORD(7, ElementsDto.NONE);
+//    SABER(7, ElementsDto.NONE), ORB(7, ElementsDto.NONE), BOW(7, ElementsDto.NONE), DAGGER(7, ElementsDto.NONE), LIRA(7, ElementsDto.NONE), SWORD(7, ElementsDto.NONE);
 
     private final int weaponAttackValue;
     public final ElementsDto elementsValue;
@@ -10,7 +10,7 @@ public class WeaponDto {
         this.weaponAttackValue = weaponAttackValue;
         this.elementsValue = elementValue;
     }
-    //feature ma miec nazwe funkcjonalnosci
+
     private int getWeaponAttackValue() {
         return weaponAttackValue;
     }
