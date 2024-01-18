@@ -3,10 +3,12 @@ package pl.dicedev.game.dto;
 public class MenuDto {
     private String letter;
     private String command;
+    private String uri;
 
-    public MenuDto(final String letter, final String command) {
+    public MenuDto(String letter, String command, String uri) {
         this.letter = letter;
         this.command = command;
+        this.uri = uri;
     }
 
     public String getLetter() {
@@ -23,6 +25,14 @@ public class MenuDto {
 
     public void setCommand(final String command) {
         this.command = command;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 
     @Override

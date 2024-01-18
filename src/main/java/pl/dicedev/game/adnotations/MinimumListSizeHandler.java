@@ -1,4 +1,4 @@
-package pl.dicedev.game.Adnotations;
+package pl.dicedev.game.adnotations;
 
 import java.lang.reflect.Field;
 import java.util.Collection;

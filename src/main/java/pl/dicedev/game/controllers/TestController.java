@@ -4,14 +4,15 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
+import java.util.Map;
 @RestController
 public class TestController {
     @RequestMapping(value = "s1", method = RequestMethod.GET)
     public String getString1() {
         return "s1";
     }
+
 
     @GetMapping("s2")
     public String getString2() {
