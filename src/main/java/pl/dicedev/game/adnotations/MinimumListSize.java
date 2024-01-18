@@ -1,4 +1,4 @@
-package pl.dicedev.game.Adnotations;
+package pl.dicedev.game.adnotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

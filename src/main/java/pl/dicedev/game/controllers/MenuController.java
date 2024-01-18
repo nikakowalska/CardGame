@@ -1,50 +1,44 @@
 package pl.dicedev.game.controllers;
 
-import org.springframework.web.bind.annotation.*;
-import pl.dicedev.game.dto.MenuDto;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import pl.dicedev.game.builders.MenuDtoBuilder;
 import pl.dicedev.game.dto.MenuListDto;
 
 import java.util.List;
 
-@RequestMapping("game")
-@RestController
+import static pl.dicedev.game.controllers.URINames.*;
 
+@RequestMapping(ENDPOINT_GAME)
+@RestController
 public class MenuController {
 
-
-    private org.springframework.http.HttpHeaders HttpHeaders;
-
-    @RequestMapping(value = "options", method = RequestMethod.GET)
+    @RequestMapping(value = ENDPOINT_OPTIONS, method = RequestMethod.GET)
     public MenuListDto getStringPathParam() {
         MenuListDto menuListDto = new MenuListDto();
-        menuListDto.setMenuOptions(List.of(
-                (new MenuDto("A", "Choose your team-leader")),
-                (new MenuDto("B", "Throw a card ")),
-                (new MenuDto("C", "Show my hand"))));
+        menuListDto.setMenuOptions(
+                List.of(
+                        MenuDtoBuilder.builder()
+                                .withLetter("A")
+                                .withCommand("Choose your team-leader")
+                                .withUri(ENDPOINT_TEAM_LEADER)
+                                .build(),
+                        MenuDtoBuilder.builder()
+                                .withLetter("B")
+                                .withCommand("Throw a card")
+                                .withUri(ENDPOINT_CARD)
+                                .build(),
+                        MenuDtoBuilder.builder()
+                                .withLetter("C")
+                                .withCommand("Show my hand")
+                                .withUri(ENDPOINT_HAND)
+                                .build()
+                )
+        );
         return menuListDto;
     }
 
-    @PostMapping("options/{choice}/{A}")
-    public String getPostA(@PathVariable String choice, @PathVariable String A) {
-        return "choice" + choice + A;
-    }
-
-//
-//    @GetMapping("requestheader")
-//    public String getStringH(
-//            @RequestHeader(org.springframework.http.HttpHeaders.ACCEPT_LANGUAGE) String language,
-//            @RequestHeader("Little (but fun) Card Game") String myHeader
-//    ) {
-//        return "test URI language/" +
-//                "\n" +
-//                HttpHeaders.ACCEPT_LANGUAGE +
-//                " " +
-//                language +
-//                "\n" +
-//                "Little (but fun) Card Game" +
-//                " " +
-//                myHeader;
-//    }
 }
 
 

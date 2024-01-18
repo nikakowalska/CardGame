@@ -1,6 +1,6 @@
 package pl.dicedev.game.dto;
 
-import pl.dicedev.game.Adnotations.MinimumListSize;
+import pl.dicedev.game.adnotations.MinimumListSize;
 
 import java.util.List;
 
