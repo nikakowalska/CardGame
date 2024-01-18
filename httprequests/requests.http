@@ -1,1 +1,12 @@
-GET http://localhost:8080/s1
+GET http://localhost:8080/requestparam?pies=alaMaKota&kotki=k1&kotki=k2
+
+###
+GET http://localhost:8080/requestparam?pies=alaMaKota&kotki=k1,k2
+
+###
+GET http://localhost:8080/requestparam/map?pies=alaMaKota&kotki=k1,k2
+
+###
+GET http://localhost:8080/requestheader
+Accept-Language: pl-PL
+MyHeader: moje-dane
