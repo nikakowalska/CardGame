@@ -2,12 +2,10 @@ package pl.dicedev.game.controllers;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
-import pl.dicedev.game.dto.TestDto;
 
 import java.util.List;
 
 import java.util.Map;
-
 @RestController
 public class TestController {
     @RequestMapping(value = "s1", method = RequestMethod.GET)
@@ -50,21 +48,6 @@ public class TestController {
                 "MyHeader" +
                 " " +
                 myHeader;
-    }
-
-    @PostMapping("sendbody")
-    public void getBodyFromJson(
-            @RequestBody TestDto testDto
-    ) {
-        System.out.println("Body form FE: " + testDto.getName() + ", age: " + testDto.getAge());
-    }
-
-    @PostMapping("sendbody/array")
-    public void getBodyFromJson(
-            @RequestBody List<TestDto> testDtos
-    ) {
-        System.out.println(testDtos);
-        System.out.println("Body array form FE: " + testDtos.get(0).getName() + ", age: " + testDtos.get(0).getAge());
     }
 
 }
