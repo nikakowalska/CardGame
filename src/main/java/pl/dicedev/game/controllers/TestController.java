@@ -1,13 +1,18 @@
 package pl.dicedev.game.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
+import pl.dicedev.game.services.TestService;
 
 import java.util.List;
 
 import java.util.Map;
 @RestController
 public class TestController {
+    @Autowired //pytanie rekrutacyjne, adnotacja ma znalezc beana z odpowiednia nazwa i go tutaj wstrzyknac,
+    //beany to klasy rest controllerer, service/ Moze znalezc nawet klase implementujaca interfejs
+    private TestService testService;
     @RequestMapping(value = "s1", method = RequestMethod.GET)
     public String getString1() {
         return "s1";
@@ -22,7 +27,7 @@ public class TestController {
     @GetMapping("requestparam")
     public String getStringPathParam(
             @RequestParam("pies") String pies,
-            @RequestParam("kotki") List<String> kotki
+            @RequestParam(value = "kotki", required = false) List<String> kotki //rozdziela sie do tablicy poniewaz jest lista,
     ) {
         return "URI requestparam?pies=" + pies + "&kotki=" + kotki;
     }
@@ -39,15 +44,21 @@ public class TestController {
             @RequestHeader(HttpHeaders.ACCEPT_LANGUAGE) String language,
             @RequestHeader("MyHeader") String myHeader
     ) {
-        return "test URI language/" +
-                "\n" +
-                HttpHeaders.ACCEPT_LANGUAGE +
-                " " +
-                language +
-                "\n" +
-                "MyHeader" +
-                " " +
-                myHeader;
+        return testService.getHeaderRequest(language, myHeader);
+//        return "test URI language/" +
+//                "\n" +
+//                HttpHeaders.ACCEPT_LANGUAGE +
+//                " " +
+//                language +
+//                "\n" +
+//                "MyHeader" +
+//                " " +
+//                myHeader;
+    }
+
+    @GetMapping("String")
+    public String getString() {
+        return testService.getString();
     }
 
 }
