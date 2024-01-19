@@ -1,0 +1,21 @@
+@startuml
+autonumber
+FE -> BE: GET /card/all
+note right
+  pobiera listę wszystkich kart
+end note
+BE -> FE: response with all cards
+
+alt pobiera jedną kartę
+FE -> BE: GET /card/{id}
+
+BE -> FE: response with one team leader
+end
+
+alt pobiera losowo X kart
+FE -> BE: GET /card?draw=X
+
+BE -> FE: response with X cards
+end
+
+@enduml

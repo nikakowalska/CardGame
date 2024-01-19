@@ -1,0 +1,27 @@
+@startuml
+autonumber
+FE -> BE: POST /user\nHeader user\nHeader password
+note right
+  Tworzy nowego użytkownika
+end note
+BE -> FE: response OK
+
+FE -> BE: GET /user\nHeader user\nHeader password
+note right
+  Sprawdzenie czy użytkownik istnieje w systemie
+end note
+BE -> FE: response OK
+
+FE -> BE: PUT /user\nHeader user\nHeader password
+note right
+  Aktualizacja użytkownika
+end note
+BE -> FE: response OK
+
+FE -> BE: DELETE /user\nHeader user\nHeader password
+note right
+  Usunięcie użytkownika
+end note
+BE -> FE: response OK
+
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+autonumber
+FE -> BE: GET /manu
+BE -> FE: response with menu
+note right
+  można pobrać tylko menu,
+  żeby wyświetlić je na FE
+end note
+@enduml

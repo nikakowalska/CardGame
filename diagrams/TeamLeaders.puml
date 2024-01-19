@@ -1,0 +1,18 @@
+@startuml
+autonumber
+FE -> BE: GET /team-leader/all
+note right
+  pobiera listę wszystkich liderów
+end note
+BE -> FE: response with all team leaders
+
+alt pobiera jednego lidera
+FE -> BE: GET /team-leader/{id}
+note right
+  pobiera jednego lidera
+end note
+
+BE -> FE: response with one team leader
+end
+
+@enduml
