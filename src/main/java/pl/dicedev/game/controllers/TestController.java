@@ -12,7 +12,7 @@ public class TestController {
     public String getString1() {
         return "s1";
     }
-
+//uml
 
     @GetMapping("s2")
     public String getString2() {
