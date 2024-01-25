@@ -30,37 +30,37 @@ public class StandardCardDtoBuilder {
         return this;
     }
 
-    public StandardCardDtoBuilder withName() {
+    public StandardCardDtoBuilder withName(String name) {
         this.name = name;
         return this;
     }
 
-    public StandardCardDtoBuilder withOnGraveyard() {
+    public StandardCardDtoBuilder withOnGraveyard(boolean onGraveyard) {
         this.onGraveyard = onGraveyard;
         return this;
     }
 
-    public StandardCardDtoBuilder withHero() {
+    public StandardCardDtoBuilder withHero(boolean hero) {
         this.hero = hero;
         return this;
     }
 
-    public StandardCardDtoBuilder withItem() {
+    public StandardCardDtoBuilder withItem(boolean item) {
         this.item = item;
         return this;
     }
 
-    public StandardCardDtoBuilder withActionPoints() {
+    public StandardCardDtoBuilder withActionPoints(int actionPoints) {
         this.actionPoints = actionPoints;
         return this;
     }
 
-    public StandardCardDtoBuilder withWeaponAttack() {
+    public StandardCardDtoBuilder withWeaponAttack(WeaponDto weaponAttack) {
         this.weaponAttack = weaponAttack;
         return this;
     }
 
-    public StandardCardDtoBuilder withHeroFightStyle() {
+    public StandardCardDtoBuilder withHeroFightStyle(FightStyleDto heroFightStyle) {
         this.heroFightStyle = heroFightStyle;
         return this;
     }
