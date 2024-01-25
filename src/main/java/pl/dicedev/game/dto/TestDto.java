@@ -1,9 +1,7 @@
 package pl.dicedev.game.dto;
 
 public class TestDto {
-    //data transfer object, obiekt wysylany porZez kontroller
-    //stworz nowy dto i przygotuj czesc rzeczy z aplikacji - menu, do przekazania na frontend, czyli meny contoller
-    //zeby wyswietlac dane z controllera
+
 
     public String name;
     public int age;

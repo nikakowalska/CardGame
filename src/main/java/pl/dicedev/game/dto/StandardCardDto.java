@@ -10,7 +10,6 @@ public class StandardCardDto {
     private boolean item;
     private int actionPoints;
     private WeaponDto weaponAttack;
-
     private FightStyleDto heroFightStyle;
     private List<StandardCardDto> standardCardList;
 

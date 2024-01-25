@@ -4,10 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TestService {
-    //klasy konfiguracyjne
-    //nie wystawia endpoin
-    //tworzy instancje klay czyli new testService
-    //doda klase do spisu klas dostepny
+
     public String getString() {
         return "Alamakota";
     }

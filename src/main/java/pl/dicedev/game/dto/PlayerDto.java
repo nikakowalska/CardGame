@@ -15,6 +15,15 @@ public class PlayerDto {
     private int scoreValue;
     private List<PlayerDto> listOfPlayers;
 
+    public PlayerDto(final String id, final String name, final TeamLeaderDto teamLeaderDto, final List<StandardCardDto> hand, final List<StandardCardDto> table, final int scoreValue) {
+        this.id = id;
+        this.name = name;
+        this.teamLeaderDto = teamLeaderDto;
+        this.hand = hand;
+        this.table = table;
+        this.scoreValue = scoreValue;
+    }
+
     public PlayerDto(final String id, final String name, final TeamLeaderDto teamLeaderDto, final List<StandardCardDto> hand, final List<StandardCardDto> table, final int scoreValue, final List<PlayerDto> listOfPlayers) {
         this.id = id;
         this.name = name;
@@ -93,7 +102,6 @@ public class PlayerDto {
                 ", hand=" + hand +
                 ", table=" + table +
                 ", scoreValue=" + scoreValue +
-                ", listOfPlayers=" + listOfPlayers +
                 '}';
     }
 }
