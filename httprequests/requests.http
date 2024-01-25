@@ -10,3 +10,27 @@ GET http://localhost:8080/requestparam/map?pies=alaMaKota&kotki=k1,k2
 GET http://localhost:8080/requestheader
 Accept-Language: pl-PL
 MyHeader: moje-dane
+
+###
+POST http://localhost:8080/sendbody
+Content-Type: application/json
+
+{
+  "name": "kotek",
+  "age": 20
+}
+
+###
+POST http://localhost:8080/sendbody/array
+Content-Type: application/json
+
+[
+  {
+  "name": "kotek",
+  "age": 20
+  },
+  {
+  "name": "piesek",
+  "age": 20
+  }
+]
