@@ -21,10 +21,10 @@ public class TeamLeaderService {
 
     public List<TeamLeaderDto> getOneTLList() {
         return List.of(new TeamLeaderDtoBuilder().withId("1").withName("HardCandy").build(),
-                new TeamLeaderDtoBuilder().withId("1").withName("HardCandy").build(),
-                new TeamLeaderDtoBuilder().withId("1").withName("HardCandy").build(),
-                new TeamLeaderDtoBuilder().withId("1").withName("HardCandy").build(),
-                new TeamLeaderDtoBuilder().withId("1").withName("HardCandy").build(),
-                new TeamLeaderDtoBuilder().withId("1").withName("HardCandy").build());
+                new TeamLeaderDtoBuilder().withId("2").withName("ChilliChips").build(),
+                new TeamLeaderDtoBuilder().withId("3").withName("Marshmallow").build(),
+                new TeamLeaderDtoBuilder().withId("4").withName("HotSausage").build(),
+                new TeamLeaderDtoBuilder().withId("5").withName("Sweet&Sour").build(),
+                new TeamLeaderDtoBuilder().withId("6").withName("YourMomsDinner").build());
     }
 }
