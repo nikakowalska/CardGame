@@ -24,6 +24,6 @@ public class BasicTeamLeaderDtoController {
             @RequestParam("id") String id,
             @RequestParam(value = "team-leader", required = false) List<BasicTeamLeaderDto> teamLeader //rozdziela sie do tablicy poniewaz jest lista,
     ) {
-        return "URI requestparam?id=" + id + "&teamLeader=" + teamLeaderService.getOneTLList().get(Integer.parseInt(id));
+        return "URI requestparam?id=" + id + "&teamLeader=" + teamLeaderService.getOneTLList().get(Integer.parseInt(id)-1);
     }
 }
