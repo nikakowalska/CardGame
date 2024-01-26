@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+FE -> Controller: GET getMenu
+FE <- Controller: Response: getMenu
+
+alt pobieranie tokena
+    FE -> Controller: get User Token
+    Controller -> Service: get User Token by name and password
+    Service -> Auth_Microservice: get User Token by name and password
+    Service <- Auth_Microservice: User Token
+    Controller <- Service: User Token
+    FE <- Controller: User Token
+note right: User Token będzie dołączany do każdego request
+end
+
+alt TeamLeader
+    FE -> Controller: get All Team Leaders
+note right: test dołączany User Token
+    Controller -> Service: get All Team Leaders
+    Service -> Auth_Microservice: check if userToken is valid
+    Service <- Auth_Microservice: Is Valid
+    Controller <- Service: all Team Leaders
+    FE <- Controller: all Team Leaders
+    FE -> Controller: user picked a team leader
+    Controller -> Service: send 'ID' of team leader
+    Service -> Auth_Microservice: check if userToken is valid
+    Service <- Auth_Microservice: Is Valid
+    Service -> Auth_Microservice: get user ID
+    Service <- Auth_Microservice: user ID
+    Service -> Database: save user Id + Team Leader Id
+    Service <- Database: OK
+    Controller <- Service: OK
+    FE <- Controller: OK
+
+end
+
+
+@enduml
