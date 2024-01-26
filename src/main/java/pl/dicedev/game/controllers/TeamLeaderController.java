@@ -18,13 +18,13 @@ public class TeamLeaderController {
     @GetMapping(ENDPOINT_ALL)
     public List<TeamLeaderDto> getAllTeamLeaders() {
         return List.of(
-                new TeamLeaderDto("b261ee52-a293-4d95-9b69-f458ccf11f55", "Harry Potter", ElementsDto.LIGHTNING, false),
-                new TeamLeaderDto("lead1", "HardCandy", ElementsDto.FIRE, false),
-                new TeamLeaderDto("lead2", "ChilliChips", ElementsDto.LIGHTNING, false),
-                new TeamLeaderDto("lead3", "Marshmallow", ElementsDto.WIND, false),
-                new TeamLeaderDto("lead4", "HotSausage", ElementsDto.FIRE, false),
-                new TeamLeaderDto("lead5", "Sweet&Sour", ElementsDto.WATER, false),
-                new TeamLeaderDto("lead6", "YourMomsDinner", ElementsDto.FIRE, false));
+                new TeamLeaderDto("1", "Harry Potter", ElementsDto.LIGHTNING, false),
+                new TeamLeaderDto("2", "HardCandy", ElementsDto.FIRE, false),
+                new TeamLeaderDto("3", "ChilliChips", ElementsDto.LIGHTNING, false),
+                new TeamLeaderDto("4", "Marshmallow", ElementsDto.WIND, false),
+                new TeamLeaderDto("5", "HotSausage", ElementsDto.FIRE, false),
+                new TeamLeaderDto("6", "Sweet&Sour", ElementsDto.WATER, false),
+                new TeamLeaderDto("7", "YourMomsDinner", ElementsDto.FIRE, false));
 
     }
 }

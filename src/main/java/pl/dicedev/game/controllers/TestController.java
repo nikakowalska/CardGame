@@ -66,7 +66,7 @@ public class TestController {
             @RequestBody List<TestDto> testDtos
     ) {
         System.out.println(testDtos);
-        System.out.println("Body array form FE: " + testDtos.get(0).getName() + ", age: " + testDtos.get(0).getAge());
+        System.out.println("Body array from FE: " + testDtos.get(0).getName() + ", age: " + testDtos.get(0).getAge());
 
     }
 }
