@@ -3,6 +3,7 @@ package pl.dicedev.game.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
+import pl.dicedev.game.dto.TestDto;
 import pl.dicedev.game.services.TestService;
 
 import java.util.List;
@@ -53,4 +54,19 @@ public class TestController {
         return testService.getString();
     }
 
+    @PostMapping("sendbody")
+    public void getBodyFromJson(
+            @RequestBody TestDto testDto
+    ) {
+        System.out.println("Body from FE: " + testDto.getName() + ", age: " + testDto.getAge());
+    }
+
+    @PostMapping("sendbody/array")
+    public void getBodyFromJson(
+            @RequestBody List<TestDto> testDtos
+    ) {
+        System.out.println(testDtos);
+        System.out.println("Body array form FE: " + testDtos.get(0).getName() + ", age: " + testDtos.get(0).getAge());
+
+    }
 }

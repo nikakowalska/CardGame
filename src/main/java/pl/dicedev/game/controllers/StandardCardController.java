@@ -15,11 +15,11 @@ import static pl.dicedev.game.controllers.URINames.ENDPOINT_CARD;
 @RestController
 @RequestMapping(ENDPOINT_CARD)
 public class StandardCardController {
-    @Autowired
-    private StandardCardService standardCardService;
+        @Autowired
+        private StandardCardService standardCardService;
 
-    @GetMapping(ENDPOINT_ALL)
-    public StandardCardService getStandardCardList(List<StandardCardDto> standardCardDtoList) {
-        return (StandardCardService) standardCardService.getStandardCardList();
-    }
+        @GetMapping(ENDPOINT_ALL)
+        public StandardCardService getStandardCardList(List<StandardCardDto> standardCardDtoList) {
+                return (StandardCardService) standardCardService.getStandardCardList();
+        }
 }
