@@ -1,5 +1,6 @@
 package pl.dicedev.game.builders;
 
+import pl.dicedev.game.dto.BasicTeamLeaderDto;
 import pl.dicedev.game.dto.ElementsDto;
 import pl.dicedev.game.dto.TeamLeaderDto;
 
@@ -19,6 +20,7 @@ public class TeamLeaderDtoBuilder {
     public TeamLeaderDto build() {
         return new TeamLeaderDto(this.id, this.name, this.boostElement, this.extraThrow);
     }
+
 
     public TeamLeaderDtoBuilder withId(String id) {
         this.id = id;
