@@ -69,4 +69,9 @@ public class TestController {
         System.out.println("Body array from FE: " + testDtos.get(0).getName() + ", age: " + testDtos.get(0).getAge());
 
     }
+
+    @GetMapping("uuid")
+    public String getUUID() {
+        return testService.getUUID();
+    }
 }
