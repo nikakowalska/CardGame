@@ -22,7 +22,7 @@ public class BasicTeamLeaderDtoController {
     public String getStringPathParam(
 
             @RequestParam("id") String id,
-            @RequestParam(value = "team-leader", required = false) List<BasicTeamLeaderDto> teamLeader //rozdziela sie do tablicy poniewaz jest lista,
+            @RequestParam(value = "team-leader", required = false) List<BasicTeamLeaderDto> teamLeader
     ) {
         return "URI requestparam?id=" + id + "&teamLeader=" + teamLeaderService.getOneTLList().get(Integer.parseInt(id)-1);
     }
