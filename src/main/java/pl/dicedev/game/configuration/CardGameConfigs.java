@@ -9,6 +9,7 @@ public class CardGameConfigs {
 
     @Bean
     public RestTemplate getRestTemplate() {
+        //tu dopisuje się zamiast geta w nazwie metody wstawiam nazwe serwisu do którego się łaćzę
         return new RestTemplate();
     }
 
