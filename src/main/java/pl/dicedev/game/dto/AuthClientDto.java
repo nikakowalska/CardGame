@@ -3,7 +3,8 @@ package pl.dicedev.game.dto;
 import java.util.Objects;
 
 public class AuthClientDto {
-            private String token;
+
+    private String token;
 
     public String getToken() {
         return token;

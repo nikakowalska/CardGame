@@ -29,8 +29,17 @@ public class UserController {
             @RequestParam(required = false) String nameParam,
             @PathVariable("password") String password
     ) {
-        if (nameParam == null) {
-                    }return authClient.getToken(name, password);
+        if (nameParam != null) {
+            switch (nameParam) {
+                case "body":
+                    return authClient.getTokenSendBody(name, password);
+                case "headers":
+                    return authClient.getTokenSendHeaders(name, password);
+                case "params":
+                    return authClient.getTokenSendParams(name, password);
+            }
+        }
+        return authClient.getToken(name, password);
     }
     //else if ()
 }
