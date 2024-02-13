@@ -1,6 +1,7 @@
 package pl.dicedev.game.clients;
 
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -20,8 +21,7 @@ public class AuthClient {
                         "http://localhost:8081/v1/authentication/test:test",
                         HttpMethod.GET,
                         HttpEntity.EMPTY,
-                        String.class)
-                .getBody();
+                        String.class).getBody();
     }
 
     public AuthClientDto getToken(String username, String password) {
@@ -33,13 +33,52 @@ public class AuthClient {
                 AuthClientDto.class);
         return responseEntity.getBody();
     }
-    public AuthClientDto getTokenTo(String username, String password) {
+    public AuthClientDto getValidateToken(String username, String password) {
         String credentials = username + ":" + password;
         ResponseEntity<AuthClientDto> responseEntity = restTemplate.exchange(
-                "http://localhost:8081/v1/authentication/" + credentials,
+                "http://localhost:8081/v1/authentication/validate/" + credentials,
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                AuthClientDto.class);
+        return responseEntity.getBody();
+    }public String getScope() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Sales-Manager", "40%discount");
+
+        HttpEntity<String>entity =new HttpEntity<>(null, headers);
+                restTemplate.exchange(
+                "http://localhost:8081/v1/authentication/scope",
+                HttpMethod.GET,
+                entity,
+                String.class);
+        return entity.getBody();
+    }
+    public AuthClientDto getScopeForToken(String username, String password) {
+        String credentials = username + ":" + password;
+        HttpEntity<AuthClientDto> entity = restTemplate.exchange(
+                "http://localhost:8081/v1/authentication/scope/" + credentials,
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                AuthClientDto.class);
+        return entity.getBody();
+    }
+    public AuthClientDto getTokenForName(String username, String password) {
+        String credentials = username + ":" + password;
+        ResponseEntity<AuthClientDto> responseEntity = restTemplate.exchange(
+                "http://localhost:8081/v1/authentication/name/" + credentials,
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 AuthClientDto.class);
         return responseEntity.getBody();
     }
+    public AuthClientDto getTokenForId(String username, String password) {
+        String credentials = username + ":" + password;
+        ResponseEntity<AuthClientDto> responseEntity = restTemplate.exchange(
+                "http://localhost:8081/v1/authentication/id/" + credentials,
+                HttpMethod.GET,
+                HttpEntity.EMPTY,
+                AuthClientDto.class);
+        return responseEntity.getBody();
+    }
+
 }

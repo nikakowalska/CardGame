@@ -29,9 +29,10 @@ public class UserController {
             @RequestParam(required = false) String nameParam,
             @PathVariable("password") String password
     ) {
-        return authClient.getToken(name, password);
+        if (nameParam == null) {
+                    }return authClient.getToken(name, password);
     }
-
+    //else if ()
 }
 
 
