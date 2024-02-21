@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  authentication-ms:
+    image: ghcr.io/dicedev-pl/simply-auth-microservice:latest
+    container_name: simply-auth-microservice
+    ports:
+      - 8081:8081
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
