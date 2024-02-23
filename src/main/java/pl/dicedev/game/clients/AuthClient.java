@@ -76,9 +76,9 @@ public class AuthClient {
     }
 
     public AuthClientDto getTokenForId(String username, String password) {
-        String credentials = username + ":" + password;
+        String token = username + ":" + password; //
         ResponseEntity<AuthClientDto> responseEntity = restTemplate.exchange(
-                "http://localhost:8081/v1/authentication/id/" + credentials,
+                "http://localhost:8081/v1/authentication/id/" + token,
                 HttpMethod.GET,
                 HttpEntity.EMPTY,
                 AuthClientDto.class);
@@ -97,7 +97,7 @@ public class AuthClient {
                 HttpMethod.POST,
                 entity,
                 AuthClientDto.class);
-        return responseEntity.getBody();
+        return responseEntity.getBody();//łapie json od R i bierze  moj obiekt authdto i przepisze wartosci z jsona do obiektu
     }
 
     public AuthClientDto getTokenSendHeaders(String username, String password) {
