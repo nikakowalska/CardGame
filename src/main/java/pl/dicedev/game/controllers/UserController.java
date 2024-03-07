@@ -1,6 +1,7 @@
 package pl.dicedev.game.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pl.dicedev.game.clients.AuthClient;
 import pl.dicedev.game.dto.AuthClientDto;
@@ -23,7 +24,13 @@ public class UserController {
         return userDto;
     }
 
-    @PostMapping(ENDPOINT_LOGIN + "/{name}/{password}")
+    @PostMapping(value = ENDPOINT_LOGIN + "/{name}/{password}")//, consumes = MediaType.APPLICATION_JSON_VALUE //, headers = MediaType.)
+    //do consumes podaj nazwe header ktory jest skonsumowany
+    //razem z wyslaneym zapytaniem przyjdzie wartosc z consumes, jesli nie, odrzuci
+    //mozna w consumes w ciapkach wpisac cos swijego
+    //w headers idzie pojedyncza klucz-wartosc
+    //to jest aplikacja trojwarswowa : repozytorium, contreollr i serwis
+    //poczytac cqrs - inne podejscie do tworzenia aplikacji
     public AuthClientDto getPost(
             @PathVariable("name") String name,
             @RequestParam(required = false) String nameParam,
