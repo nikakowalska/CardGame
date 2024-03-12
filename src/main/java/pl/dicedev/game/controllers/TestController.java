@@ -69,9 +69,14 @@ public class TestController {
         System.out.println("Body array from FE: " + testDtos.get(0).getName() + ", age: " + testDtos.get(0).getAge());
 
     }
-
-    @GetMapping("uuid")
-    public String getUUID() {
-        return testService.getUUID();
+    @GetMapping("read")
+    public void getRead() {
+        testService.readTestEntity();
     }
+
+    @GetMapping("save")
+    public void getSave() {
+        testService.saveTestEntity();
+    }
+
 }

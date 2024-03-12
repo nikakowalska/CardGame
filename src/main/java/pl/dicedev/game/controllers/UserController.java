@@ -1,6 +1,7 @@
 package pl.dicedev.game.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pl.dicedev.game.clients.AuthClient;
 import pl.dicedev.game.dto.AuthClientDto;
@@ -23,7 +24,7 @@ public class UserController {
         return userDto;
     }
 
-    @PostMapping(ENDPOINT_LOGIN + "/{name}/{password}")
+    @PostMapping(value = ENDPOINT_LOGIN + "/{name}/{password}")
     public AuthClientDto getPost(
             @PathVariable("name") String name,
             @RequestParam(required = false) String nameParam,
