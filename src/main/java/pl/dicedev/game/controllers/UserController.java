@@ -24,13 +24,7 @@ public class UserController {
         return userDto;
     }
 
-    @PostMapping(value = ENDPOINT_LOGIN + "/{name}/{password}")//, consumes = MediaType.APPLICATION_JSON_VALUE //, headers = MediaType.)
-    //do consumes podaj nazwe header ktory jest skonsumowany
-    //razem z wyslaneym zapytaniem przyjdzie wartosc z consumes, jesli nie, odrzuci
-    //mozna w consumes w ciapkach wpisac cos swijego
-    //w headers idzie pojedyncza klucz-wartosc
-    //to jest aplikacja trojwarswowa : repozytorium, contreollr i serwis
-    //poczytac cqrs - inne podejscie do tworzenia aplikacji
+    @PostMapping(value = ENDPOINT_LOGIN + "/{name}/{password}")
     public AuthClientDto getPost(
             @PathVariable("name") String name,
             @RequestParam(required = false) String nameParam,
